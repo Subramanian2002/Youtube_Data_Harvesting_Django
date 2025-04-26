@@ -18,7 +18,7 @@ def index(request):
 
     # Connect to MongoDB
     mongo_uri = settings.MONGO_URI
-    client = pymongo.MongoClient(mongo_uri)
+    client = pymongo.MongoClient(mongo_uri,serverSelectionTimeoutMS=5000)
     db = client["YTH"]
     collection = db["channel_data"]
 
